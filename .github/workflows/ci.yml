@@ -49,22 +49,22 @@ jobs:
           distribution: "temurin"
           cache: 'gradle'
 
-      - name: Build debug APK
+      - name: Build release APK
         run: |
           cd PipePipeClient
-          ./gradlew assembleDebug lintDebug --stacktrace -DskipFormatKtlint
+          ./gradlew assembleRelease
 
       - name: Upload APKs
         uses: actions/upload-artifact@v3
         with:
           name: all-apks-in-one(intermediates)
           retention-days: 1
-          path: PipePipeClient/app/build/outputs/apk/debug/*.apk
+          path: PipePipeClient/app/build/outputs/apk/release/*.apk
 
       - name: Output filenames
         id: step-output
         run: |
-          files=$(ls PipePipeClient/app/build/outputs/apk/debug)
+          files=$(ls PipePipeClient/app/build/outputs/apk/release)
 
           json_array="["
           first_file=true
