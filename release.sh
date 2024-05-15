@@ -1,10 +1,10 @@
-cd PipePipeClient
+cd PipeSquaredClient
 git pull
-cd ../PipePipeExtractor
+cd ../PipeSquaredExtractor
 git pull
 cd ..
 vim fastlane/metadata/android/en-US/changelogs/$1.txt
 git add .
 git commit -a
 git push
-git push git@github.com:InfinityLoop1308/PipePipe.git
+git push git@github.com:rickastlee/PipeSquared.git
